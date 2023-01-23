@@ -18,29 +18,29 @@ export class UsersService {
 
   getUsers():Observable<User[]>{
     
- const  httpOptions = {
-    headers: new HttpHeaders({ 'Authorization': `Bearer ${this.jwt}` })
-  };
+//  const  httpOptions = {
+//     headers: new HttpHeaders({ 'Authorization': `Bearer ${this.jwt}` })
+//   };
 
-    return this.http.get<User[]>('http://localhost:8000/users', httpOptions)
+    return this.http.get<User[]>('http://localhost:8000/users')
   }
 
   getUser(id:number):Observable<User>{
     
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Authorization': `Bearer ${this.jwt}` })
-  };
+  // const httpOptions = {
+  //   headers: new HttpHeaders({ 'Authorization': `Bearer ${this.jwt}` })
+  // };
 
-    return this.http.get<User>(`http://localhost:8000/users/${id} `, httpOptions)
+    return this.http.get<User>(`http://localhost:8000/users/${id} `)
   }
 
 
   getUserEmail(email:string):Observable<User[]>{
     
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Authorization': `Bearer ${this.jwt}` })
-  };
-    return this.http.get<User[]>(`http://localhost:8000/users/?q=${email}`, httpOptions)
+  // const httpOptions = {
+  //   headers: new HttpHeaders({ 'Authorization': `Bearer ${this.jwt}` })
+  // };
+    return this.http.get<User[]>(`http://localhost:8000/users/?q=${email}`)
   }
 
 

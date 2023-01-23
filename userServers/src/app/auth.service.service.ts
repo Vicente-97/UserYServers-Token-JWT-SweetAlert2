@@ -24,10 +24,10 @@ export class AuthServiceService {
  
 
   isAuthenticated():Observable<boolean> {
-    const httpHeaders={
-      headers: new HttpHeaders({ 'Authorization': `Bearer ${localStorage.getItem("jwt")}` })
-    }
-    return  this.http.get<any>('http://localhost:8000/jwt', httpHeaders)
+    // const httpHeaders={
+    //   headers: new HttpHeaders({ 'Authorization': `Bearer ${localStorage.getItem("jwt")}` })
+    // }
+    return  this.http.get<any>('http://localhost:8000/jwt')
     .pipe(switchMap(resp =>{
 
       return of(true);
